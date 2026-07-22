@@ -1,0 +1,10 @@
+{
+  "name": "performance-evaluation-tool-root",
+  "version": "1.0.0",
+  "description": "Root runner for Performance Evaluation Tool",
+  "scripts": {
+    "start": "node run.js",
+    "seed": "npm run seed --prefix backend",
+    "install-all": "npm install --prefix backend && npm install --prefix frontend"
+  }
+}

@@ -1,0 +1,24 @@
+# Dependency directories
+node_modules/
+
+# SQLite databases
+backend/database.sqlite
+
+# Build files
+dist/
+build/
+
+# Local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE configurations
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

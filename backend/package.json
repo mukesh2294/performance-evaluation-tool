@@ -1,0 +1,17 @@
+{
+  "name": "performance-evaluation-tool-backend",
+  "version": "1.0.0",
+  "description": "Backend for Performance Evaluation Tool",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node db.js --seed",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "sqlite3": "^5.1.7"
+  }
+}
