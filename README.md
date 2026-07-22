@@ -11,7 +11,7 @@ This pilot application demonstrates how the data model and application workflows
 
 ---
 
-## 🛠️ Data Model & Scenario Alignment
+##  Data Model & Scenario Alignment
 
 The system uses an **SQLite Relational Database** which guarantees data integrity, relational constraints, and efficient query execution. Here is how the schema maps to the pilot requirements:
 
@@ -38,17 +38,7 @@ The system uses an **SQLite Relational Database** which guarantees data integrit
 * **Database Alignment**:
   - A manager is defined as any user who has one or more direct reports (i.e. is referenced by another user's `manager_id`).
   - HR tracking utilizes a `LEFT OUTER JOIN` between the active reporting lines and the `feedbacks` table for the selected cycle.
-  - **SQL Query**:
-    ```sql
-    SELECT 
-      m.id AS manager_id, m.name AS manager_name, m.email AS manager_email,
-      r.id AS report_id, r.name AS report_name, r.email AS report_email,
-      f.status AS feedback_status, f.submitted_at AS feedback_submitted_at
-    FROM users m
-    JOIN users r ON r.manager_id = m.id
-    LEFT JOIN feedbacks f ON f.reviewer_id = m.id AND f.reviewee_id = r.id AND f.cycle_id = :cycleId
-    WHERE m.company_id = :companyId
-    ```
+ 
   - If `feedback_status` is `NULL`, the review is **Not Started**.
   - If it is `'draft'`, the review is in **Draft** state.
   - If it is `'submitted'`, the review is **Completed**.
@@ -63,7 +53,7 @@ The system uses an **SQLite Relational Database** which guarantees data integrit
 
 ---
 
-## 💡 Assumptions Made
+##  Assumptions Made
 
 1. **Self-Evaluations**: Employees do not perform self-evaluations. Only managers evaluate their direct reports.
 2. **Evaluation Cycle**: A cycle represents a calendar month. Only one evaluation per reviewer-reviewee pair is allowed in a single cycle (enforced by a `UNIQUE(cycle_id, reviewer_id, reviewee_id)` constraint).
@@ -73,35 +63,35 @@ The system uses an **SQLite Relational Database** which guarantees data integrit
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
-### 📋 Prerequisites
+###  Prerequisites
 * [Node.js](https://nodejs.org/) (v16 or higher)
 * npm (v8 or higher)
 
-### 📦 Installation
+###  Installation
 From the repository root, install dependencies for both the frontend and backend:
 ```bash
 npm run install-all
 ```
 
-### 🗄️ Database Seeding
+###  Database Seeding
 Initialize the SQLite schema and populate it with historical data for May, June, and July:
 ```bash
 npm run seed
 ```
 
-### 💻 Running the Application
+### Running the Application
 To run the backend API server (port 5000) and frontend development server (port 3000) concurrently:
 ```bash
 npm start
 ```
 Once started, open your browser and navigate to:
-👉 **[http://localhost:3000](http://localhost:3000)**
+ **[http://localhost:3000](http://localhost:3000)**
 
 ---
 
-## 🔑 Demo Logins
+##  Demo Logins
 Feel free to click the Quick Login buttons on the login screen, or type the following credentials (Password is `password123` for all):
 
 | User | Email | Role / Purpose |
