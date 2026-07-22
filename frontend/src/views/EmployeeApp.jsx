@@ -201,7 +201,7 @@ export default function EmployeeApp({ user, onLogout }) {
           background: none;
           border: none;
           padding: 0.75rem 1.25rem;
-          color: var(--text-secondary);
+          color: 'var(--text-secondary)';
           font-weight: 600;
           font-size: 0.95rem;
           cursor: pointer;
@@ -437,7 +437,7 @@ export default function EmployeeApp({ user, onLogout }) {
                 {currentFeedback ? (
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                     <div style={{ paddingBottom: '1rem', borderBottom: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <p style={{ color: var(--text-secondary), fontSize: '0.9rem' }}>
+                      <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
                         Reviewed by: <strong style={{ color: '#fff' }}>{currentFeedback.reviewerName}</strong>
                       </p>
                       <span className="badge badge-success">Submitted</span>
@@ -473,7 +473,7 @@ export default function EmployeeApp({ user, onLogout }) {
                     </div>
                   </div>
                 ) : (
-                  <div style={{ padding: '3rem 1rem', textAlign: 'center', color: var(--text-secondary) }}>
+                  <div style={{ padding: '3rem 1rem', textAlign: 'center', color: 'var(--text-secondary)' }}>
                     <AlertCircle size={40} color="#6b7280" style={{ marginBottom: '1rem' }} />
                     <p style={{ fontSize: '0.95rem' }}>No feedback submitted for this cycle yet.</p>
                   </div>
@@ -482,7 +482,7 @@ export default function EmployeeApp({ user, onLogout }) {
             </div>
 
             {/* Right: History Trends */}
-            <div style={{ display: 'flex', flexDirectory: 'column', gap: '1.5rem', height: 'fit-content' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', height: 'fit-content' }}>
               <div className="card" style={{ width: '100%' }}>
                 <h3 className="parameter-title" style={{ fontSize: '1.25rem', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <TrendingUp size={20} color="#10b981" /> Parameter History
@@ -526,7 +526,7 @@ export default function EmployeeApp({ user, onLogout }) {
                     </div>
 
                     <div className="trend-comments-list">
-                      <h4 style={{ fontSize: '0.85rem', color: var(--text-secondary), textTransform: 'uppercase', letter-spacing: '0.05em' }}>
+                      <h4 style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                         Comments History
                       </h4>
                       {history.map(h => {
@@ -535,8 +535,8 @@ export default function EmployeeApp({ user, onLogout }) {
                         return (
                           <div className="trend-comment-item" key={h.cycleId}>
                             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-                              <span style={{ fontSize: '0.8rem', fontWeight: 700, color: var(--text-secondary) }}>{h.cycleName}</span>
-                              <span style={{ fontSize: '0.8rem', color: var(--primary), fontWeight: 700 }}>Score: {paramFeedback.score}/5</span>
+                              <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-secondary)' }}>{h.cycleName}</span>
+                              <span style={{ fontSize: '0.8rem', color: 'var(--primary)', fontWeight: 700 }}>Score: {paramFeedback.score}/5</span>
                             </div>
                             <p style={{ fontSize: '0.85rem', fontStyle: 'italic', color: '#d1d5db', lineHeight: '1.4' }}>
                               "{paramFeedback.comment}"
@@ -547,7 +547,7 @@ export default function EmployeeApp({ user, onLogout }) {
                     </div>
                   </div>
                 ) : (
-                  <div style={{ padding: '2rem 1rem', textAlign: 'center', color: var(--text-muted) }}>
+                  <div style={{ padding: '2rem 1rem', textAlign: 'center', color: 'var(--text-muted)' }}>
                     <p style={{ fontSize: '0.85rem' }}>No history records available yet.</p>
                   </div>
                 )}
@@ -581,9 +581,9 @@ export default function EmployeeApp({ user, onLogout }) {
                   </div>
                   {totalCount > 0 && (
                     <div style={{ textAlign: 'right' }}>
-                      <div style={{ fontSize: '0.8rem', color: var(--text-secondary), fontWeight: 600 }}>SUBMISSIONS</div>
+                      <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: 600 }}>SUBMISSIONS</div>
                       <div style={{ fontSize: '1.25rem', fontWeight: 800 }}>
-                        {submittedCount} <span style={{ color: var(--text-muted), fontSize: '0.95rem' }}>/ {totalCount}</span>
+                        {submittedCount} <span style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>/ {totalCount}</span>
                       </div>
                     </div>
                   )}
@@ -636,7 +636,7 @@ export default function EmployeeApp({ user, onLogout }) {
                   </table>
                 </div>
               ) : (
-                <div style={{ padding: '3rem 1rem', textAlign: 'center', color: var(--text-secondary) }}>
+                <div style={{ padding: '3rem 1rem', textAlign: 'center', color: 'var(--text-secondary)' }}>
                   <AlertCircle size={40} color="#6b7280" style={{ marginBottom: '1rem' }} />
                   <p>No team members reporting to you were found.</p>
                 </div>
@@ -682,7 +682,7 @@ export default function EmployeeApp({ user, onLogout }) {
                   <div key={p.id} className="parameter-card">
                     <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'baseline', gap: '0.5rem', marginBottom: '0.5rem' }}>
                       <h4 className="parameter-title">{p.name}</h4>
-                      <span style={{ fontSize: '0.8rem', color: var(--text-secondary) }}>
+                      <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
                         {item.score > 0 ? `Selected Score: ${item.score}/5` : 'Score Required *'}
                       </span>
                     </div>

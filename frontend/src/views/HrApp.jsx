@@ -124,7 +124,7 @@ export default function HrApp({ user, onLogout }) {
         }
         .stat-lbl {
           font-size: 0.8rem;
-          color: var(--text-secondary);
+          color: 'var(--text-secondary)';
           text-transform: uppercase;
           letter-spacing: 0.05em;
         }
@@ -151,7 +151,7 @@ export default function HrApp({ user, onLogout }) {
         }
         .manager-email {
           font-size: 0.8rem;
-          color: var(--text-secondary);
+          color: 'var(--text-secondary)';
         }
         .pending-list {
           margin-top: 1rem;
@@ -177,7 +177,7 @@ export default function HrApp({ user, onLogout }) {
         }
         .pending-item-role {
           font-size: 0.75rem;
-          color: var(--text-secondary);
+          color: 'var(--text-secondary)';
         }
         .progress-track {
           width: 100%;
@@ -197,7 +197,7 @@ export default function HrApp({ user, onLogout }) {
         .progress-text {
           font-size: 0.8rem;
           font-weight: 600;
-          color: var(--text-secondary);
+          color: 'var(--text-secondary)';
         }
         .toast-container {
           position: fixed;
@@ -217,7 +217,7 @@ export default function HrApp({ user, onLogout }) {
         <div className="header-content" style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
           <div className="logo-section">
             <ShieldCheck className="logo-icon" size={24} color="#6366f1" />
-            <span className="logo-text">Performify <span style={{ fontSize: '0.8rem', fontWeight: 500, color: var(--text-secondary) }}>HR Admin</span></span>
+            <span className="logo-text">Performify <span style={{ fontSize: '0.8rem', fontWeight: 500, color: 'var(--text-secondary)' }}>HR Admin</span></span>
           </div>
 
           <div className="user-profile-menu">
@@ -289,6 +289,7 @@ export default function HrApp({ user, onLogout }) {
 
         {/* Stats Grid */}
         <div className="stats-grid">
+          {/* Card 1: Active Managers */}
           <div className="card stat-card">
             <div className="stat-icon blue">
               <Users size={24} />
@@ -327,7 +328,7 @@ export default function HrApp({ user, onLogout }) {
           </h3>
 
           {loading ? (
-            <div style={{ textAlign: 'center', padding: '3rem 1rem', color: var(--text-secondary) }}>
+            <div style={{ textAlign: 'center', padding: '3rem 1rem', color: 'var(--text-secondary)' }}>
               Loading report details...
             </div>
           ) : filteredManagers.length > 0 ? (
@@ -383,7 +384,7 @@ export default function HrApp({ user, onLogout }) {
                   {/* List of Pending feedback for this manager */}
                   {!isCompleted ? (
                     <div>
-                      <h5 style={{ fontSize: '0.8rem', color: var(--text-secondary), textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>
+                      <h5 style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>
                         Pending Feedback Details
                       </h5>
                       <div className="pending-list">
@@ -413,7 +414,7 @@ export default function HrApp({ user, onLogout }) {
               );
             })
           ) : (
-            <div className="card" style={{ padding: '3rem 1rem', textAlign: 'center', color: var(--text-secondary) }}>
+            <div className="card" style={{ padding: '3rem 1rem', textAlign: 'center', color: 'var(--text-secondary)' }}>
               No managers found matching the filters.
             </div>
           )}
@@ -423,10 +424,10 @@ export default function HrApp({ user, onLogout }) {
       {/* Toast Alert */}
       {toast && (
         <div className="toast-container">
-          <div 
-            className="card" 
-            style={{ 
-              padding: '1.25rem 1.75rem', 
+          <div
+            className="card"
+            style={{
+              padding: '1.25rem 1.75rem',
               background: '#1e1b4b',
               borderColor: 'var(--primary)',
               boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
